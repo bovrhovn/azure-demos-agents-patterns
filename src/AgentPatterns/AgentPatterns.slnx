@@ -1,5 +1,7 @@
 <Solution>
+  <Project Path="AP.Approval/AP.Approval.csproj" />
   <Project Path="AP.Concurrent/AP.Concurrent.csproj" />
+  <Project Path="AP.GroupChat/AP.GroupChat.csproj" />
   <Project Path="AP.Handoff/AP.Handoff.csproj" />
   <Project Path="AP.Sequential/AP.Sequential.csproj" />
 </Solution>
