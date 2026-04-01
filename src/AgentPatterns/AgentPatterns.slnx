@@ -5,4 +5,5 @@
   <Project Path="AP.Handoff/AP.Handoff.csproj" />
   <Project Path="AP.HumanInTheLoop/AP.HumanInTheLoop.csproj" />
   <Project Path="AP.Sequential/AP.Sequential.csproj" />
+  <Project Path="../../tests/AgentPatterns.Tests/AgentPatterns.Tests.csproj" />
 </Solution>
