@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="AP.Concurrent/AP.Concurrent.csproj" />
+  <Project Path="AP.Handoff/AP.Handoff.csproj" />
   <Project Path="AP.Sequential/AP.Sequential.csproj" />
 </Solution>
