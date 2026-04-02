@@ -1,13 +1,23 @@
 <Solution>
-  <Project Path="AP.Approval/AP.Approval.csproj" />
-  <Project Path="AP.AzureSearchAsVectorStore/AP.AzureSearchAsVectorStore.csproj" />
-  <Project Path="AP.Concurrent/AP.Concurrent.csproj" />
-  <Project Path="AP.GroupChat/AP.GroupChat.csproj" />
-  <Project Path="AP.Handoff/AP.Handoff.csproj" />
-  <Project Path="AP.HumanInTheLoop/AP.HumanInTheLoop.csproj" />
-  <Project Path="AP.Sequential/AP.Sequential.csproj" />
+  <Folder Name="/Approvals/">
+    <Project Path="AP.Approval/AP.Approval.csproj" />
+    <Project Path="AP.HumanInTheLoop/AP.HumanInTheLoop.csproj" />
+  </Folder>
+  <Folder Name="/MCP/">
+    <Project Path="AP.TaxClient/AP.TaxClient.csproj" />
+    <Project Path="AP.TaxServer/AP.TaxServer.csproj" />
+  </Folder>
+  <Folder Name="/Methods for AI/">
+    <Project Path="AP.UseMethodForAI/AP.UseMethodForAI.csproj" />
+  </Folder>
+  <Folder Name="/Patterns/">
+    <Project Path="AP.Concurrent/AP.Concurrent.csproj" />
+    <Project Path="AP.GroupChat/AP.GroupChat.csproj" />
+    <Project Path="AP.Handoff/AP.Handoff.csproj" />
+    <Project Path="AP.Sequential/AP.Sequential.csproj" />
+  </Folder>
+  <Folder Name="/Vector Store/">
+    <Project Path="AP.AzureSearchAsVectorStore/AP.AzureSearchAsVectorStore.csproj" />
+  </Folder>
   <Project Path="../../tests/AgentPatterns.Tests/AgentPatterns.Tests.csproj" />
-  <Project Path="AP.TaxClient/AP.TaxClient.csproj" />
-  <Project Path="AP.TaxServer/AP.TaxServer.csproj" />
-  <Project Path="AP.UseMethodForAI/AP.UseMethodForAI.csproj" />
 </Solution>
