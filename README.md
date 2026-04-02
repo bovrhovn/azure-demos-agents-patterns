@@ -24,6 +24,12 @@ A collection of demos showcasing different **agent patterns** built with the [Mi
 | **Approval** | [AP.Approval](src/AgentPatterns/AP.Approval/README.md) | Human approval gate around sensitive tool calls |
 | **Group Chat** | [AP.GroupChat](src/AgentPatterns/AP.GroupChat/README.md) | Multi-agent conversation with custom termination logic |
 | **Human-in-the-Loop** | [AP.HumanInTheLoop](src/AgentPatterns/AP.HumanInTheLoop/README.md) | Typed external input injected directly into the workflow graph |
+| **Memory** | [AP.Memory](src/AgentPatterns/AP.Memory/README.md) | Agent session with in-memory chat history storage and retrieval |
+| **Model Router** | [AP.ModelRouter](src/AgentPatterns/AP.ModelRouter/README.md) | Inspect `ModelId` on responses; foundation for routing across models |
+| **Vector Store** | [AP.AzureSearchAsVectorStore](src/AgentPatterns/AP.AzureSearchAsVectorStore/README.md) | Use Azure AI Search as a vector store for semantic / kNN search |
+| **MCP Server** | [AP.TaxServer](src/AgentPatterns/AP.TaxServer/README.md) | ASP.NET Core server exposing a tool over Model Context Protocol |
+| **MCP Client** | [AP.TaxClient](src/AgentPatterns/AP.TaxClient/README.md) | AI client that discovers and invokes remote MCP tools |
+| **Method as Tool** | [AP.UseMethodForAI](src/AgentPatterns/AP.UseMethodForAI/README.md) | Wrap a plain .NET method with `AIFunctionFactory` for in-process tool use |
 
 ---
 
@@ -85,16 +91,59 @@ Contributions are welcome! Please:
 
 ## 📚 Learn More
 
+### Core Frameworks
+
 | Resource | Link |
 |----------|------|
-| Microsoft Agent Framework (Microsoft.Agents.AI) | <https://learn.microsoft.com/dotnet/ai/> |
+| Microsoft.Agents.AI | <https://learn.microsoft.com/dotnet/ai/> |
 | Azure AI Foundry | <https://learn.microsoft.com/azure/ai-foundry/> |
 | Azure OpenAI Service | <https://learn.microsoft.com/azure/ai-services/openai/> |
 | Semantic Kernel | <https://learn.microsoft.com/semantic-kernel/> |
 | Microsoft.Extensions.AI | <https://learn.microsoft.com/dotnet/ai/microsoft-extensions-ai> |
 | Azure Identity / DefaultAzureCredential | <https://learn.microsoft.com/dotnet/azure/sdk/authentication/> |
+
+### Agent Patterns & Architecture
+
+| Resource | Link |
+|----------|------|
 | Multi-agent systems on Azure AI Foundry | <https://learn.microsoft.com/azure/ai-foundry/concepts/agents> |
 | AI agent design patterns | <https://learn.microsoft.com/azure/architecture/ai-ml/guide/> |
+| Agentic AI workflows overview | <https://learn.microsoft.com/azure/ai-foundry/agents/overview> |
+| Responsible AI for agents | <https://learn.microsoft.com/azure/ai-services/responsible-use-of-ai-overview> |
+
+### Function Calling & Tool Use
+
+| Resource | Link |
+|----------|------|
+| Azure OpenAI function calling | <https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling> |
+| AIFunctionFactory API reference | <https://learn.microsoft.com/dotnet/api/microsoft.extensions.ai.aifunctionfactory> |
+| Model Context Protocol (MCP) | <https://modelcontextprotocol.io/> |
+| MCP .NET SDK (csharp-sdk) | <https://github.com/modelcontextprotocol/csharp-sdk> |
+
+### Vector Search & RAG
+
+| Resource | Link |
+|----------|------|
+| Azure AI Search overview | <https://learn.microsoft.com/azure/search/search-what-is-azure-search> |
+| Vector search in Azure AI Search | <https://learn.microsoft.com/azure/search/vector-search-overview> |
+| Create a vector index | <https://learn.microsoft.com/azure/search/vector-search-how-to-create-index> |
+| Azure OpenAI embeddings | <https://learn.microsoft.com/azure/ai-services/openai/concepts/understand-embeddings> |
+| Retrieval-Augmented Generation | <https://learn.microsoft.com/azure/search/retrieval-augmented-generation-overview> |
+
+### Chat History & Memory
+
+| Resource | Link |
+|----------|------|
+| Chat history in Microsoft.Extensions.AI | <https://learn.microsoft.com/dotnet/ai/microsoft-extensions-ai> |
+| Azure OpenAI chat completions | <https://learn.microsoft.com/azure/ai-services/openai/how-to/chatgpt> |
+
+### Azure OpenAI Models
+
+| Resource | Link |
+|----------|------|
+| Available models | <https://learn.microsoft.com/azure/ai-services/openai/concepts/models> |
+| GPT-4o overview | <https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-4o> |
+| Deployment management | <https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource> |
 
 ---
 

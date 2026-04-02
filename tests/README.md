@@ -12,16 +12,22 @@ tests/
     ├── AgentPatterns.Tests.csproj
     ├── GlobalUsings.cs
     ├── Sequential/
-    │   └── AgentHelperTests.cs         # AgentHelper factory — translation agents
+    │   └── AgentHelperTests.cs                     # AgentHelper factory — translation agents
     ├── Concurrent/
-    │   └── AgentHelperTests.cs         # AgentHelper factory — concurrent variant
+    │   └── AgentHelperTests.cs                     # AgentHelper factory — concurrent variant
     ├── Approval/
-    │   └── DeploymentGroupChatManagerTests.cs  # Custom speaker selection logic
+    │   └── DeploymentGroupChatManagerTests.cs      # Custom speaker selection logic
     ├── GroupChat/
-    │   └── ApprovalBasedManagerTests.cs        # Approval-based termination logic
-    └── HumanInTheLoop/
-        ├── JudgeExecutorTests.cs               # Number guess evaluation logic
-        └── WorkflowFactoryTests.cs             # Workflow graph construction
+    │   └── ApprovalBasedManagerTests.cs            # Approval-based termination logic
+    ├── HumanInTheLoop/
+    │   ├── JudgeExecutorTests.cs                   # Number guess evaluation logic
+    │   └── WorkflowFactoryTests.cs                 # Workflow graph construction
+    ├── UseMethodForAI/
+    │   └── DotnetMethodHelperTests.cs              # In-process tax calculation method
+    ├── AzureSearchAsVectorStore/
+    │   └── MovieFactoryTests.cs                    # Movie catalogue factory and Movie model
+    └── TaxServer/
+        └── McpToolsTests.cs                        # MCP tool — tax calculation with ILogger mock
 ```
 
 ---
@@ -59,6 +65,9 @@ dotnet test src/AgentPatterns/AgentPatterns.slnx
 | `GroupChat/ApprovalBasedManagerTests` | `ApprovalBasedManager` | Terminates on approver saying "approve" (case-insensitive); non-approver ignored; empty history → false |
 | `HumanInTheLoop/JudgeExecutorTests` | `JudgeExecutor` | Correct guess → `YieldOutput`; too low → `Below` signal; too high → `Above` signal; try count tracked |
 | `HumanInTheLoop/WorkflowFactoryTests` | `WorkflowFactory`, `NumberSignal` | Workflow builds non-null; signals have correct values |
+| `UseMethodForAI/DotnetMethodHelperTests` | `DotnetMethodHelper.CalculateTax` | "Method" doubles months; "Tax" halves months; unknown customer unchanged; result contains name and count |
+| `AzureSearchAsVectorStore/MovieFactoryTests` | `MovieFactory`, `Movie` | Returns 4 movies with unique keys; all fields populated; `Movie` POCO properties set correctly |
+| `TaxServer/McpToolsTests` | `McpTools.CalculateTax` | Same tax logic as `DotnetMethodHelper`; `ILogger` receives `Information` calls |
 
 ---
 
