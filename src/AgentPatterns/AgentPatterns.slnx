@@ -16,6 +16,7 @@
     <Project Path="AP.Handoff/AP.Handoff.csproj" />
     <Project Path="AP.ModelRouter/AP.ModelRouter.csproj" />
     <Project Path="AP.Sequential/AP.Sequential.csproj" />
+    <Project Path="AP.Workflow/AP.Workflow.csproj" />
   </Folder>
   <Folder Name="/Vector Store/">
     <Project Path="AP.AzureSearchAsVectorStore/AP.AzureSearchAsVectorStore.csproj" />
