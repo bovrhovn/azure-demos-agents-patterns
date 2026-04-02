@@ -1,9 +1,13 @@
 <Solution>
   <Project Path="AP.Approval/AP.Approval.csproj" />
+  <Project Path="AP.AzureSearchAsVectorStore/AP.AzureSearchAsVectorStore.csproj" />
   <Project Path="AP.Concurrent/AP.Concurrent.csproj" />
   <Project Path="AP.GroupChat/AP.GroupChat.csproj" />
   <Project Path="AP.Handoff/AP.Handoff.csproj" />
   <Project Path="AP.HumanInTheLoop/AP.HumanInTheLoop.csproj" />
   <Project Path="AP.Sequential/AP.Sequential.csproj" />
   <Project Path="../../tests/AgentPatterns.Tests/AgentPatterns.Tests.csproj" />
+  <Project Path="AP.TaxClient/AP.TaxClient.csproj" />
+  <Project Path="AP.TaxServer/AP.TaxServer.csproj" />
+  <Project Path="AP.UseMethodForAI/AP.UseMethodForAI.csproj" />
 </Solution>
