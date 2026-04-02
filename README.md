@@ -30,6 +30,7 @@ A collection of demos showcasing different **agent patterns** built with the [Mi
 | **MCP Server** | [AP.TaxServer](src/AgentPatterns/AP.TaxServer/README.md) | ASP.NET Core server exposing a tool over Model Context Protocol |
 | **MCP Client** | [AP.TaxClient](src/AgentPatterns/AP.TaxClient/README.md) | AI client that discovers and invokes remote MCP tools |
 | **Method as Tool** | [AP.UseMethodForAI](src/AgentPatterns/AP.UseMethodForAI/README.md) | Wrap a plain .NET method with `AIFunctionFactory` for in-process tool use |
+| **Critic–Writer Loop** | [AP.Workflow](src/AgentPatterns/AP.Workflow/README.md) | Iterative Writer→Critic feedback loop with structured JSON output and shared workflow state |
 
 ---
 
@@ -111,6 +112,40 @@ Contributions are welcome! Please:
 | Agentic AI workflows overview | <https://learn.microsoft.com/azure/ai-foundry/agents/overview> |
 | Responsible AI for agents | <https://learn.microsoft.com/azure/ai-services/responsible-use-of-ai-overview> |
 
+### Sequential & Concurrent Patterns
+
+| Resource | Link |
+|----------|------|
+| Chaining chat completions | <https://learn.microsoft.com/azure/ai-services/openai/how-to/chatgpt> |
+| Parallel task execution in .NET | <https://learn.microsoft.com/dotnet/standard/parallel-programming/task-parallel-library-tpl> |
+| Task.WhenAll for concurrent work | <https://learn.microsoft.com/dotnet/api/system.threading.tasks.task.whenall> |
+| Streaming chat completions | <https://learn.microsoft.com/azure/ai-services/openai/how-to/streaming> |
+
+### Handoff & Routing Patterns
+
+| Resource | Link |
+|----------|------|
+| Multi-agent orchestration | <https://learn.microsoft.com/azure/ai-foundry/concepts/agents#multi-agent-scenarios> |
+| AI agent triage and routing | <https://learn.microsoft.com/azure/architecture/ai-ml/guide/> |
+| Group chat with custom managers | <https://learn.microsoft.com/azure/ai-foundry/agents/overview> |
+
+### Human-in-the-Loop & Approval Patterns
+
+| Resource | Link |
+|----------|------|
+| Human oversight of AI agents | <https://learn.microsoft.com/azure/ai-services/responsible-use-of-ai-overview> |
+| Responsible AI principles | <https://learn.microsoft.com/azure/ai-services/responsible-use-of-ai-overview> |
+| Workflow graphs with RequestPort | <https://learn.microsoft.com/dotnet/ai/microsoft-extensions-ai> |
+
+### Structured Output (Critic–Writer Workflow)
+
+| Resource | Link |
+|----------|------|
+| Structured outputs with Azure OpenAI | <https://learn.microsoft.com/azure/ai-services/openai/how-to/structured-outputs> |
+| JSON schema mode | <https://learn.microsoft.com/azure/ai-services/openai/how-to/structured-outputs#json-schema> |
+| ChatResponseFormat API | <https://learn.microsoft.com/dotnet/api/microsoft.extensions.ai.chatresponseformat> |
+| Iterative agent refinement | <https://learn.microsoft.com/azure/ai-foundry/agents/overview> |
+
 ### Function Calling & Tool Use
 
 | Resource | Link |
@@ -119,6 +154,8 @@ Contributions are welcome! Please:
 | AIFunctionFactory API reference | <https://learn.microsoft.com/dotnet/api/microsoft.extensions.ai.aifunctionfactory> |
 | Model Context Protocol (MCP) | <https://modelcontextprotocol.io/> |
 | MCP .NET SDK (csharp-sdk) | <https://github.com/modelcontextprotocol/csharp-sdk> |
+| MCP server with ASP.NET Core | <https://learn.microsoft.com/dotnet/ai/model-context-protocol> |
+| Exposing .NET methods as AI tools | <https://learn.microsoft.com/dotnet/ai/quickstarts/use-function-calling> |
 
 ### Vector Search & RAG
 
@@ -129,6 +166,8 @@ Contributions are welcome! Please:
 | Create a vector index | <https://learn.microsoft.com/azure/search/vector-search-how-to-create-index> |
 | Azure OpenAI embeddings | <https://learn.microsoft.com/azure/ai-services/openai/concepts/understand-embeddings> |
 | Retrieval-Augmented Generation | <https://learn.microsoft.com/azure/search/retrieval-augmented-generation-overview> |
+| Semantic ranking | <https://learn.microsoft.com/azure/search/semantic-search-overview> |
+| kNN and ANN search algorithms | <https://learn.microsoft.com/azure/search/vector-search-ranking> |
 
 ### Chat History & Memory
 
@@ -136,6 +175,17 @@ Contributions are welcome! Please:
 |----------|------|
 | Chat history in Microsoft.Extensions.AI | <https://learn.microsoft.com/dotnet/ai/microsoft-extensions-ai> |
 | Azure OpenAI chat completions | <https://learn.microsoft.com/azure/ai-services/openai/how-to/chatgpt> |
+| Managing conversation context | <https://learn.microsoft.com/azure/ai-services/openai/how-to/chatgpt#managing-conversations> |
+| In-memory vs. persistent storage | <https://learn.microsoft.com/dotnet/standard/data/> |
+
+### Model Routing
+
+| Resource | Link |
+|----------|------|
+| Azure OpenAI model overview | <https://learn.microsoft.com/azure/ai-services/openai/concepts/models> |
+| Selecting models for different tasks | <https://learn.microsoft.com/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability> |
+| Deployment management | <https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource> |
+| Cost and latency trade-offs | <https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-4o> |
 
 ### Azure OpenAI Models
 
@@ -144,6 +194,7 @@ Contributions are welcome! Please:
 | Available models | <https://learn.microsoft.com/azure/ai-services/openai/concepts/models> |
 | GPT-4o overview | <https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-4o> |
 | Deployment management | <https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource> |
+| Quotas and limits | <https://learn.microsoft.com/azure/ai-services/openai/quotas-limits> |
 
 ---
 

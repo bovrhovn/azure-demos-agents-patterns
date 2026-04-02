@@ -1,5 +1,6 @@
 using AP.HumanInTheLoop;
 using Microsoft.Agents.AI.Workflows;
+using MsWorkflow = Microsoft.Agents.AI.Workflows.Workflow;
 
 namespace AgentPatterns.Tests.HumanInTheLoop;
 
@@ -8,7 +9,7 @@ public class WorkflowFactoryTests
     [Fact]
     public void BuildWorkflow_ReturnsNonNullWorkflow()
     {
-        Workflow workflow = WorkflowFactory.BuildWorkflow();
+        MsWorkflow workflow = WorkflowFactory.BuildWorkflow();
         Assert.NotNull(workflow);
     }
 
