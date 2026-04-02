@@ -7,6 +7,7 @@ var workflow = WorkflowFactory.BuildWorkflow();
 
 // Execute the workflow
 await using StreamingRun handle = await InProcessExecution.RunStreamingAsync(workflow, NumberSignal.Init);
+AnsiConsole.MarkupLine("[gray]Flow executed, watching loop...[/]");
 await foreach (WorkflowEvent evt in handle.WatchStreamAsync())
 {
     switch (evt)
@@ -19,7 +20,7 @@ await foreach (WorkflowEvent evt in handle.WatchStreamAsync())
 
         case WorkflowOutputEvent outputEvt:
             // The workflow has yielded output
-            Console.WriteLine($"Workflow completed with result: {outputEvt.Data}");
+            AnsiConsole.WriteLine($"Workflow completed with result: {outputEvt.Data}");
             return;
     }
 }
@@ -49,15 +50,8 @@ static ExternalResponse HandleExternalRequest(ExternalRequest request)
 
 static int ReadIntegerFromConsole(string prompt)
 {
-    while (true)
-    {
-        Console.Write(prompt);
-        string? input = Console.ReadLine();
-        if (int.TryParse(input, out int value))
-        {
-            return value;
-        }
-
-        Console.WriteLine("Invalid input. Please enter a valid integer.");
-    }
+    var input = AnsiConsole.Ask<string>(prompt);
+    if (int.TryParse(input, out int value)) return value;
+    AnsiConsole.MarkupLine("[red]Invalid input. Please enter a valid integer.[/]");
+    return 0;
 }

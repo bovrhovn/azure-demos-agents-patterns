@@ -60,9 +60,9 @@ Workflow workflow = AgentWorkflowBuilder
     .Build();
 
 // 5. Start the workflow
-Console.WriteLine("Starting group chat workflow for software deployment...");
-Console.WriteLine($"Agents: [{qaEngineer.Name}, {devopsEngineer.Name}]");
-Console.WriteLine(new string('-', 60));
+AnsiConsole.WriteLine("Starting group chat workflow for software deployment...");
+AnsiConsole.WriteLine($"Agents: [{qaEngineer.Name}, {devopsEngineer.Name}]");
+AnsiConsole.WriteLine(new string('-', 60));
 
 List<ChatMessage> messages =
     [new(ChatRole.User, "We need to deploy version 2.4.0 to production. Please coordinate the deployment.")];
@@ -79,46 +79,40 @@ await foreach (WorkflowEvent evt in run.WatchStreamAsync())
         {
             if (e.Request.TryGetDataAs(out ToolApprovalRequestContent? approvalRequestContent))
             {
-                Console.WriteLine();
-                Console.WriteLine($"[APPROVAL REQUIRED] From agent: {e.Request.PortInfo.PortId}");
-                Console.WriteLine($"  Tool: {((FunctionCallContent)approvalRequestContent.ToolCall).Name}");
-                Console.WriteLine(
+                AnsiConsole.WriteLine();
+                AnsiConsole.WriteLine($"[APPROVAL REQUIRED] From agent: {e.Request.PortInfo.PortId}");
+                AnsiConsole.WriteLine($"  Tool: {((FunctionCallContent)approvalRequestContent.ToolCall).Name}");
+                AnsiConsole.WriteLine(
                     $"  Arguments: {JsonSerializer.Serialize(((FunctionCallContent)approvalRequestContent.ToolCall).Arguments)}");
-                Console.WriteLine();
+                AnsiConsole.WriteLine();
 
                 // Approve the tool call request
-                Console.WriteLine($"Tool: {((FunctionCallContent)approvalRequestContent.ToolCall).Name} approved");
+                AnsiConsole.WriteLine($"Tool: {((FunctionCallContent)approvalRequestContent.ToolCall).Name} approved");
                 await run.SendResponseAsync(
                     e.Request.CreateResponse(approvalRequestContent.CreateResponse(approved: true)));
             }
-
             break;
         }
-
         case AgentResponseUpdateEvent e:
         {
             if (e.ExecutorId != lastExecutorId)
             {
-                if (lastExecutorId is not null)
-                {
-                    Console.WriteLine();
-                }
+                if (lastExecutorId is not null) AnsiConsole.WriteLine();
 
-                Console.WriteLine($"- {e.ExecutorId}: ");
+                AnsiConsole.WriteLine($"- {e.ExecutorId}: ");
                 lastExecutorId = e.ExecutorId;
             }
 
-            Console.Write(e.Update.Text);
-
+            AnsiConsole.Write(e.Update.Text);
             break;
         }
     }
 }
 
-Console.WriteLine();
-Console.WriteLine(new string('-', 60));
-Console.WriteLine("Deployment workflow completed successfully!");
-Console.WriteLine("All agents have finished their tasks.");
+AnsiConsole.WriteLine();
+AnsiConsole.WriteLine(new string('-', 60));
+AnsiConsole.WriteLine("Deployment workflow completed successfully!");
+AnsiConsole.MarkupLine("[gray]All agents have finished their tasks.[/]");
 
 // Tool definitions - These are called by the agents during workflow execution
 [Description("Run automated tests for the application.")]
