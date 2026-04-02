@@ -14,10 +14,12 @@
     <Project Path="AP.Concurrent/AP.Concurrent.csproj" />
     <Project Path="AP.GroupChat/AP.GroupChat.csproj" />
     <Project Path="AP.Handoff/AP.Handoff.csproj" />
+    <Project Path="AP.ModelRouter/AP.ModelRouter.csproj" />
     <Project Path="AP.Sequential/AP.Sequential.csproj" />
   </Folder>
   <Folder Name="/Vector Store/">
     <Project Path="AP.AzureSearchAsVectorStore/AP.AzureSearchAsVectorStore.csproj" />
+    <Project Path="AP.Memory/AP.Memory.csproj" />
   </Folder>
   <Project Path="../../tests/AgentPatterns.Tests/AgentPatterns.Tests.csproj" />
 </Solution>
