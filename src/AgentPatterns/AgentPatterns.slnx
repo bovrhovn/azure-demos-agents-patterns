@@ -12,6 +12,7 @@
     <Project Path="AP.WorkIQ/AP.WorkIQ.csproj" />
   </Folder>
   <Folder Name="/Methods for AI/">
+    <Project Path="AP.AppInsights/AP.AppInsights.csproj" />
     <Project Path="AP.UseMethodForAI/AP.UseMethodForAI.csproj" />
   </Folder>
   <Folder Name="/Patterns/">
