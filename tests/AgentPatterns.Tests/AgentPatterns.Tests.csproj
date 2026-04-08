@@ -29,6 +29,13 @@
         <ProjectReference Include="..\..\src\AgentPatterns\AP.AzureSearchAsVectorStore\AP.AzureSearchAsVectorStore.csproj" />
         <ProjectReference Include="..\..\src\AgentPatterns\AP.TaxServer\AP.TaxServer.csproj" />
         <ProjectReference Include="..\..\src\AgentPatterns\AP.Workflow\AP.Workflow.csproj" />
+        <ProjectReference Include="..\..\src\AgentPatterns\AP.Handoff\AP.Handoff.csproj" />
+        <ProjectReference Include="..\..\src\AgentPatterns\AP.Memory\AP.Memory.csproj" />
+        <ProjectReference Include="..\..\src\AgentPatterns\AP.ModelRouter\AP.ModelRouter.csproj" />
+        <ProjectReference Include="..\..\src\AgentPatterns\AP.TaxClient\AP.TaxClient.csproj" />
+        <ProjectReference Include="..\..\src\AgentPatterns\AP.AppInsights\AP.AppInsights.csproj" />
+        <ProjectReference Include="..\..\src\AgentPatterns\AP.FoundryBasic\AP.FoundryBasic.csproj" />
+        <ProjectReference Include="..\..\src\AgentPatterns\AP.WorkIQ\AP.WorkIQ.csproj" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.5" />

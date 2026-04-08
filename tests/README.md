@@ -26,8 +26,22 @@ tests/
     │   └── DotnetMethodHelperTests.cs              # In-process tax calculation method
     ├── AzureSearchAsVectorStore/
     │   └── MovieFactoryTests.cs                    # Movie catalogue factory and Movie model
-    └── TaxServer/
-        └── McpToolsTests.cs                        # MCP tool — tax calculation with ILogger mock
+    ├── TaxServer/
+    │   └── McpToolsTests.cs                        # MCP tool — tax calculation with ILogger mock
+    ├── Handoff/
+    │   └── HandoffAgentFactoryTests.cs             # Triage + specialist agent creation and names
+    ├── Memory/
+    │   └── MemoryConfigTests.cs                    # Default instructions, agent name, and prompt constants
+    ├── ModelRouter/
+    │   └── ModelRouterHelperTests.cs               # Chat history builder — roles, prompts, and custom messages
+    ├── TaxClient/
+    │   └── TaxClientHelperTests.cs                 # Tax consultant chat history builder
+    ├── AppInsights/
+    │   └── AppInsightsConfigTests.cs               # OpenTelemetry source/service name and env var constants
+    ├── FoundryBasic/
+    │   └── FoundryConfigTests.cs                   # Foundry env var names and default prompt constants
+    └── WorkIQ/
+        └── WorkIQHelperTests.cs                    # WorkIQ server name, tool name, and MCP command constants
 ```
 
 ---
@@ -68,6 +82,13 @@ dotnet test src/AgentPatterns/AgentPatterns.slnx
 | `UseMethodForAI/DotnetMethodHelperTests` | `DotnetMethodHelper.CalculateTax` | "Method" doubles months; "Tax" halves months; unknown customer unchanged; result contains name and count |
 | `AzureSearchAsVectorStore/MovieFactoryTests` | `MovieFactory`, `Movie` | Returns 4 movies with unique keys; all fields populated; `Movie` POCO properties set correctly |
 | `TaxServer/McpToolsTests` | `McpTools.CalculateTax` | Same tax logic as `DotnetMethodHelper`; `ILogger` receives `Information` calls |
+| `Handoff/HandoffAgentFactoryTests` | `HandoffAgentFactory` | Creates triage, history-tutor, and math-tutor agents with correct names and domain-specific instructions |
+| `Memory/MemoryConfigTests` | `MemoryConfig` | Constants for default instructions, agent name, prompt, and no-messages message are correct and distinct |
+| `ModelRouter/ModelRouterHelperTests` | `ModelRouterHelper` | `BuildChatHistory` returns system+user pair; custom message overrides default; each call returns new list |
+| `TaxClient/TaxClientHelperTests` | `TaxClientHelper` | `BuildChatHistory` returns system+user pair; instructions mention "tax"; default message mentions "customer" |
+| `AppInsights/AppInsightsConfigTests` | `AppInsightsConfig` | Source name, service name, telemetry source, and env var name constants match expected values |
+| `FoundryBasic/FoundryConfigTests` | `FoundryConfig` | Endpoint and agent-name env var constants are correct; default prompt mentions "stock" |
+| `WorkIQ/WorkIQHelperTests` | `WorkIQHelper` | Server name, tool name, MCP command, and arguments match expected values; all non-empty |
 
 ---
 

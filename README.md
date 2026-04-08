@@ -31,6 +31,9 @@ A collection of demos showcasing different **agent patterns** built with the [Mi
 | **MCP Client** | [AP.TaxClient](src/AgentPatterns/AP.TaxClient/README.md) | AI client that discovers and invokes remote MCP tools |
 | **Method as Tool** | [AP.UseMethodForAI](src/AgentPatterns/AP.UseMethodForAI/README.md) | Wrap a plain .NET method with `AIFunctionFactory` for in-process tool use |
 | **Critic–Writer Loop** | [AP.Workflow](src/AgentPatterns/AP.Workflow/README.md) | Iterative Writer→Critic feedback loop with structured JSON output and shared workflow state |
+| **Application Insights** | [AP.AppInsights](src/AgentPatterns/AP.AppInsights/README.md) | Wire Azure Application Insights + OpenTelemetry into an `IChatClient` pipeline for traces and metrics |
+| **Foundry Basic** | [AP.FoundryBasic](src/AgentPatterns/AP.FoundryBasic/README.md) | Call a pre-deployed agent on Azure AI Foundry using the `Azure.AI.Projects` SDK |
+| **WorkIQ MCP Client** | [AP.WorkIQ](src/AgentPatterns/AP.WorkIQ/README.md) | Discover and invoke Microsoft 365 tools via the WorkIQ MCP server and the stdio transport |
 
 ---
 
