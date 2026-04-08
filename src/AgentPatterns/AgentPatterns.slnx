@@ -6,6 +6,7 @@
   <Folder Name="/MCP/">
     <Project Path="AP.TaxClient/AP.TaxClient.csproj" />
     <Project Path="AP.TaxServer/AP.TaxServer.csproj" />
+    <Project Path="AP.WorkIQ/AP.WorkIQ.csproj" />
   </Folder>
   <Folder Name="/Methods for AI/">
     <Project Path="AP.UseMethodForAI/AP.UseMethodForAI.csproj" />
