@@ -36,35 +36,35 @@ await CreateOrUpdateIndexAsync(indexClient);
 var searchClient = indexClient.GetSearchClient(indexName);
 
 // get movie list
-var movieData = MovieFactory.GetMovieVectorList();
+// var movieData = MovieFactory.GetMovieVectorList();
 var credentials = new DefaultAzureCredential();
 IEmbeddingGenerator<string, Embedding<float>> generator =
     new AzureOpenAIClient(new Uri(endpoint), credentials)
     .GetEmbeddingClient(deploymentName)
     .AsIEmbeddingGenerator();
-
-// generate embeddings and upload documents to Azure AI Search
-AnsiConsole.MarkupLine("[blue]Processing movies to Azure AI search[/]");
-var documents = new List<SearchDocument>();
-foreach (var movie in movieData)
-{
-    movie.Vector = await generator.GenerateVectorAsync(movie.Description);
-    var doc = new SearchDocument
-    {
-        ["Key"] = movie.Key,
-        ["Title"] = movie.Title,
-        ["Year"] = movie.Year,
-        ["Category"] = movie.Category,
-        ["Description"] = movie.Description,
-        ["Vector"] = movie.Vector.ToArray()
-    };
-    documents.Add(doc);
-    AnsiConsole.MarkupLine($"[gray]Processed[/] {movie.Title}");
-}
-await searchClient.IndexDocumentsAsync(IndexDocumentsBatch.Upload(documents));
-
-// wait briefly for indexing to complete
-await Task.Delay(2000);
+//
+// // generate embeddings and upload documents to Azure AI Search
+// AnsiConsole.MarkupLine("[blue]Processing movies to Azure AI search[/]");
+// var documents = new List<SearchDocument>();
+// foreach (var movie in movieData)
+// {
+//     movie.Vector = await generator.GenerateVectorAsync(movie.Description);
+//     var doc = new SearchDocument
+//     {
+//         ["Key"] = movie.Key,
+//         ["Title"] = movie.Title,
+//         ["Year"] = movie.Year,
+//         ["Category"] = movie.Category,
+//         ["Description"] = movie.Description,
+//         ["Vector"] = movie.Vector.ToArray()
+//     };
+//     documents.Add(doc);
+//     AnsiConsole.MarkupLine($"[gray]Processed[/] {movie.Title}");
+// }
+// await searchClient.IndexDocumentsAsync(IndexDocumentsBatch.Upload(documents));
+//
+// // wait briefly for indexing to complete
+// await Task.Delay(2000);
 
 // creates a list of questions
 var questions = new List<(string Question, int ResultCount)>

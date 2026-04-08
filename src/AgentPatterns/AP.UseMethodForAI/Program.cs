@@ -24,6 +24,7 @@ IChatClient client =
             new AzureOpenAIClient(new Uri(endpoint), credentials)
                 .GetChatClient(deploymentName)
                 .AsIChatClient())
+        .UseFunctionInvocation()
         .Build();
 var chatOptions = new ChatOptions
 {
