@@ -3,6 +3,9 @@
     <Project Path="AP.Approval/AP.Approval.csproj" />
     <Project Path="AP.HumanInTheLoop/AP.HumanInTheLoop.csproj" />
   </Folder>
+  <Folder Name="/Foundry/">
+    <Project Path="AP.FoundryBasic/AP.FoundryBasic.csproj" />
+  </Folder>
   <Folder Name="/MCP/">
     <Project Path="AP.TaxClient/AP.TaxClient.csproj" />
     <Project Path="AP.TaxServer/AP.TaxServer.csproj" />
