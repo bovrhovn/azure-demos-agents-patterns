@@ -1,6 +1,6 @@
 # Azure Demos — Agents & Patterns
 
-A collection of demos showcasing different **agent patterns** built with the [Microsoft Agent Framework](https://microsoft.github.io/autogen/), [Semantic Kernel](https://learn.microsoft.com/semantic-kernel/), and [Azure AI Foundry](https://ai.azure.com/).
+A collection of demos showcasing different **agent patterns** built with [.NET AI and Microsoft.Extensions.AI](https://learn.microsoft.com/dotnet/ai/), [Semantic Kernel](https://learn.microsoft.com/semantic-kernel/), and [Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/).
 
 ---
 
@@ -204,4 +204,3 @@ Contributions are welcome! Please:
 ## 📄 License
 
 This project is licensed under the terms of the [LICENSE](./LICENSE) file.
-

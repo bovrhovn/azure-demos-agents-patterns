@@ -16,6 +16,8 @@ This directory holds all project documentation beyond what lives in the source c
 
 ## Useful Links
 
-- [Microsoft AutoGen / Agent Framework](https://microsoft.github.io/autogen/)
-- [Azure AI Foundry](https://ai.azure.com/)
+- [.NET AI and Microsoft.Extensions.AI](https://learn.microsoft.com/dotnet/ai/)
+- [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/)
+- [Azure AI Foundry agents overview](https://learn.microsoft.com/azure/ai-foundry/agents/overview)
 - [Semantic Kernel](https://learn.microsoft.com/semantic-kernel/)
+- [Model Context Protocol in .NET](https://learn.microsoft.com/dotnet/ai/model-context-protocol)
