@@ -2,18 +2,19 @@
 
 ## What This Pattern Does
 
-The **FoundryBasic** pattern demonstrates how to call a pre-deployed agent on [Azure AI Foundry](https://ai.azure.com/) using the `Azure.AI.Projects` SDK. Rather than building an agent programmatically, this demo references an existing named agent and invokes it via the Responses API.
+The **FoundryBasic** pattern demonstrates how to call a pre-deployed agent on [Azure AI Foundry](https://ai.azure.com/) using the `Microsoft.Agents.AI.Foundry` provider and `Azure.AI.Projects` SDK. Rather than building an agent programmatically, this demo references an existing named Foundry agent and invokes it through the common `AIAgent` API.
 
 This demo:
 1. Creates an `AIProjectClient` pointing at your Foundry endpoint.
 2. Resolves a named agent by `AgentName`.
-3. Calls `CreateResponse` with a natural-language prompt.
-4. Prints the agent's text output.
+3. Wraps the Foundry agent as a `FoundryAgent`.
+4. Calls `RunAsync` with a natural-language prompt.
+5. Prints the agent's text output.
 
 ## When to Use It
 
 - You have an agent defined and managed in the Azure AI Foundry portal.
-- You want a minimal, direct integration with the Foundry Responses API.
+- You want a minimal integration with a Foundry-managed agent through Microsoft Agent Framework.
 - You need to call a Foundry agent from a .NET application without the overhead of local orchestration.
 
 ## Prerequisites
@@ -58,15 +59,13 @@ AIProjectClient projectClient = new(endpoint: new Uri(endpoint), tokenProvider: 
 
 ### Calling the Agent
 
-Resolve the agent by name and call `CreateResponse` with your prompt:
+Resolve the agent by name, wrap it as an `AIAgent`, and call `RunAsync` with your prompt:
 
 ```csharp
-var agentReference = new AgentReference(name: agentName);
-var responseClient = projectClient
-    .ProjectOpenAIClient.GetProjectResponsesClientForAgent(agentReference);
-
-var response = responseClient.CreateResponse("give me MSFT stock info");
-Console.WriteLine(response.Value.GetOutputText());
+var agentRecord = await projectClient.AgentAdministrationClient.GetAgentAsync(agentName);
+FoundryAgent agent = projectClient.AsAIAgent(agentRecord);
+AgentResponse response = await agent.RunAsync("Give me MSFT stock info.");
+Console.WriteLine(response.Text);
 ```
 
 ## Key Classes
@@ -75,9 +74,9 @@ Console.WriteLine(response.Value.GetOutputText());
 |----------------|---------|
 | `FoundryConfig` | Constants for environment variable names and the default prompt |
 | `AIProjectClient` | Entry point for the Azure AI Foundry project SDK |
-| `AgentReference` | Identifies an existing deployed agent by name |
-| `GetProjectResponsesClientForAgent` | Returns a responses client scoped to the named agent |
-| `CreateResponse` | Sends a prompt and returns the agent's response |
+| `AgentAdministrationClient.GetAgentAsync` | Retrieves the current version of an existing Foundry agent by name |
+| `AsAIAgent` | Wraps the named Foundry agent as an Agent Framework `FoundryAgent` |
+| `RunAsync` | Sends a prompt and returns the agent's response |
 
 ## Learn More
 

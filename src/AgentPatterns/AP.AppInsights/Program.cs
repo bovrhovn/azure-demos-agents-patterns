@@ -18,10 +18,10 @@ const string ServiceName = "AgentOpenTelemetry";
 var endpoint = Environment.GetEnvironmentVariable("Endpoint");
 ArgumentException.ThrowIfNullOrEmpty(endpoint, "Endpoint environment variable is not set.");
 var applicationInsightsConnectionString = Environment.GetEnvironmentVariable("APPLICATION_INSIGHTS_CONNECTION_STRING");
-ArgumentException.ThrowIfNullOrEmpty(endpoint, "applicationInsightsConnectionString environment variable is not set.");
+ArgumentException.ThrowIfNullOrEmpty(applicationInsightsConnectionString, "APPLICATION_INSIGHTS_CONNECTION_STRING environment variable is not set.");
 var deploymentName = Environment.GetEnvironmentVariable("DeploymentName");
 ArgumentException.ThrowIfNullOrEmpty(deploymentName, "DeploymentName environment variable is not set.");
-var enableSensitiveData = Environment.GetEnvironmentVariable("EnableSensitiveData") ?? "true";
+var enableSensitiveData = Environment.GetEnvironmentVariable("EnableSensitiveData") ?? "false";
 ArgumentException.ThrowIfNullOrEmpty(enableSensitiveData, "EnableSensitiveData environment variable is not set.");
 
 AnsiConsole.MarkupLine($"[green]Using Endpoint:[/] {endpoint}");
